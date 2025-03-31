@@ -6,11 +6,12 @@ const Login = () => {
     const [password,setPassword] = useState("");
     const [message,setMessage]   = useState("");
     const [jwt,setJwt]           =useState("");
+    const [profile,setprofile] = useState(null);
 
     const handleLogin = async (e) => {
         e.preventDefault();
        try{
-           const response = await fetch("http://localhost:8080/signin", {
+           const response = await fetch("http://localhost:8080/login", {
             method:"POST",
             headers:{
                 "Content-Type": "application/json",
@@ -24,7 +25,7 @@ const Login = () => {
            if(response.ok){
            const data = await response.json();
            console.log(data);
-           setJwt(data.token);
+           setJwt(data.jwtToken);
            setMessage("Login Successful");
            }else{
             setMessage("Login Failed please check login credentials");
@@ -38,6 +39,9 @@ const Login = () => {
         setMessage("an error occured please try again.");
     }
 };
+
+
+
 
 return(
     <div>
