@@ -8,7 +8,7 @@ import Login from "./Login";
 function App() {
   return (
     <div className="App">
-     <h1>JWT Authencation Demo</h1>
+     <h2>JWT Authencation Demo</h2>
     <Login/>
     </div>
   );
